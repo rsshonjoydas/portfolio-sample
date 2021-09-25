@@ -38,13 +38,23 @@ const Navbar = () => {
                   </NavLink>
                 </li>
                 <li className="nav-item nav__item">
+                  <NavLink className="nav-link nav__link" to="/about">
+                    About
+                  </NavLink>
+                </li>
+                <li className="nav-item nav__item">
+                  <NavLink className="nav-link nav__link" to="/skills">
+                    Skills
+                  </NavLink>
+                </li>
+                <li className="nav-item nav__item">
                   <NavLink className="nav-link nav__link" to="/service">
                     Services
                   </NavLink>
                 </li>
                 <li className="nav-item nav__item">
-                  <NavLink className="nav-link nav__link" to="/about">
-                    About
+                  <NavLink className="nav-link nav__link" to="/testimonials">
+                    Testimonials
                   </NavLink>
                 </li>
                 <li className="nav-item nav__item">
@@ -53,22 +63,14 @@ const Navbar = () => {
                   </NavLink>
                 </li>
               </ul>
-              <div>
-                {/* <Button variant="contained" size="medium" type="submit">
-                  Sign Up
-                </Button>
-                <Button variant="contained" size="medium" type="submit">
-                  Log In
-                </Button> */}
 
-                <ButtonGroup
-                  variant="text"
-                  aria-label="text medium primary button group"
-                >
-                  <Button>Sign UP</Button>
-                  <Button>Log In</Button>
-                </ButtonGroup>
-              </div>
+              <ButtonGroup
+                variant="text"
+                aria-label="text medium primary button group"
+              >
+                <Button>Sign UP</Button>
+                <Button>Log In</Button>
+              </ButtonGroup>
             </div>
           </div>
         </nav>
