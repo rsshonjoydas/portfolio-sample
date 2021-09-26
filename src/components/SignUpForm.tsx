@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Button from "../components/Button";
 import classes from "../styles/login.module.css";
 import SocialAuth from "./SocialAuth";
 
@@ -35,13 +36,9 @@ const SignUpForm = () => {
             </Link>
           </div>
           {/* //? submit button */}
-          <a className={classes.submit} href="#">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            Submit
-          </a>
+          <Button type="submit">
+            <span>Submit</span>
+          </Button>
         </form>
       </div>
     </div>
