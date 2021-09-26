@@ -68,8 +68,12 @@ const Navbar = () => {
                 variant="text"
                 aria-label="text medium primary button group"
               >
-                <Button>Sign UP</Button>
-                <Button>Log In</Button>
+                <Button>
+                  <NavLink to="/signup">Sign UP</NavLink>
+                </Button>
+                <Button>
+                  <NavLink to="/login">Log In</NavLink>
+                </Button>
               </ButtonGroup>
             </div>
           </div>
