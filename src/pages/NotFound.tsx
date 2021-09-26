@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import items from "../adapters/notFound.data";
 import classes from "../styles/NotFound.module.css";
 
 const NotFound = () => {
@@ -8,28 +9,18 @@ const NotFound = () => {
         <div id="scene" className={classes.scene} data-hover-only="false">
           <div className={classes.circle} data-depth="1.2"></div>
 
-          <div className={classes.one} data-depth="0.9">
-            <div className={classes.content}>
-              <span className={classes.piece}></span>
-              <span className={classes.piece}></span>
-              <span className={classes.piece}></span>
+          {items.map((item) => (
+            <div
+              className={classes[item.numberClass]}
+              data-depth={item.dataDepth}
+            >
+              <div className={classes.content}>
+                <span className={classes.piece}></span>
+                <span className={classes.piece}></span>
+                <span className={classes.piece}></span>
+              </div>
             </div>
-          </div>
-
-          <div className={classes.two} data-depth="0.6">
-            <div className={classes.content}>
-              <span className={classes.piece}></span>
-              <span className={classes.piece}></span>
-              <span className={classes.piece}></span>
-            </div>
-          </div>
-          <div className={classes.three} data-depth="0.4">
-            <div className={classes.content}>
-              <span className={classes.piece}></span>
-              <span className={classes.piece}></span>
-              <span className={classes.piece}></span>
-            </div>
-          </div>
+          ))}
 
           <p className={classes.p404} data-depth="0.50">
             404
