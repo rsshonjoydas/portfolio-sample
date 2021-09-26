@@ -8,7 +8,7 @@ const Services = () => {
       <div className={classes.wrapper}>
         {services.map((service) => {
           return (
-            <>
+            <div key={service.id}>
               <div className={classes.box}>
                 <div className={classes.frontFace}>
                   <div className={classes.icon}>
@@ -21,7 +21,7 @@ const Services = () => {
                   <p>{service.label}</p>
                 </div>
               </div>
-            </>
+            </div>
           );
         })}
       </div>

@@ -11,6 +11,7 @@ const NotFound = () => {
 
           {items.map((item) => (
             <div
+              key={item.id}
               className={classes[item.numberClass]}
               data-depth={item.dataDepth}
             >

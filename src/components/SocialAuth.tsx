@@ -6,7 +6,7 @@ const SocialAuth = () => {
     <>
       <div className={styles.socialMedia}>
         {items.map((item) => (
-          <button type="button" className={styles.socialIcon}>
+          <button key={item.id} type="button" className={styles.socialIcon}>
             <i className={item.icon} />
           </button>
         ))}
