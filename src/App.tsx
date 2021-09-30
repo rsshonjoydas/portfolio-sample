@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Layout from "./components/Layout";
+import LogoutPage from "./components/logout";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/contact" exact={true} component={Contact} />
           <Route path="/signup" exact={true} component={Signup} />
           <Route path="/login" exact={true} component={Login} />
+          <Route path="/logout" exact={true} component={LogoutPage} />
           <Route path="*" component={NotFound} />
         </Switch>
       </Layout>
