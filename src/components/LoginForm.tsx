@@ -1,9 +1,37 @@
-import { Link } from "react-router-dom";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import Button from "../components/Button";
 import classes from "../styles/login.module.css";
 import SocialAuth from "./SocialAuth";
 
 const LoginForm = () => {
+  const [authenticating, setAuthenticating] = useState<boolean>(false);
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [error, setError] = useState<string>("");
+
+  const history = useHistory();
+
+  const signInWithEmailAndPassword2 = () => {
+    if (error !== "") setError("");
+
+    setAuthenticating(true);
+
+    const auth = getAuth();
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((result: any) => {
+        // logging.info(result);
+        history.push("/");
+      })
+      .catch((error: { message: React.SetStateAction<string> }) => {
+        // logging.error(error);
+        setAuthenticating(false);
+        setError(error.message);
+      });
+  };
+
   return (
     <div className={`section ${classes.loginForm}`}>
       <div className={classes.loginBox}>
@@ -11,11 +39,21 @@ const LoginForm = () => {
         <form>
           {/* //? input box */}
           <div className={classes.userBox}>
-            <input type="text" name="" required />
+            <input
+              type="text"
+              name=""
+              required
+              onChange={(event) => setEmail(event.target.value)}
+            />
             <label>Username</label>
           </div>
           <div className={classes.userBox}>
-            <input type="password" name="" required />
+            <input
+              type="password"
+              name=""
+              required
+              onChange={(event) => setPassword(event.target.value)}
+            />
             <label>Password</label>
           </div>
           <div className={classes.link}>
@@ -36,7 +74,7 @@ const LoginForm = () => {
             </Link>
           </div>
           {/* //? submit button */}
-          <Button type="submit">
+          <Button type="submit" onClick={() => signInWithEmailAndPassword2()}>
             <span>Submit</span>
           </Button>
         </form>
